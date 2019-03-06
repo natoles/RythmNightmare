@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BoxRightNote : MonoBehaviour {
 
+    public RightNote[] notes = new RightNote[50];
+    public int numberNotes = 0;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
