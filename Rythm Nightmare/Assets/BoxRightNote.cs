@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayRightNote : MonoBehaviour {
-
-    public GameObject RightGameObject;
+public class BoxRightNote : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -17,15 +15,12 @@ public class PlayRightNote : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D col)
-    {     
-        if (col.gameObject == RightGameObject)
+    {
+       if (Input.GetKeyDown("right"))
         {
-            if (Input.GetKeyDown("right"))
-            {
-                
-                Destroy(col.gameObject);
-            }
+            Destroy(col.gameObject);
         }
+        
         
     }
 }
