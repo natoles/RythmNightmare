@@ -14,7 +14,7 @@ public class RightNote : MonoBehaviour {
         box = GameObject.Find("RightBox").GetComponent<BoxRightNote>();
         rb = GetComponent<Rigidbody2D>();
         velocity = new Vector2(0, -1 * speed);
-        box.notes[0] = this;
+        box.notes[box.numberNotes] = this;
         box.numberNotes++;
         Debug.Log("Note added in place" + box.notes.Length);
         
