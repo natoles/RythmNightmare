@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoxDownNote : BoxNote {
 
-    public DownNote[] notes = new DownNote[10];
+    public Note[] notes = new Note[10];
     public int numberNotes = 0;
 
     // Use this for initialization
