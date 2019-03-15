@@ -16,19 +16,14 @@ public class BoxDownNote : BoxNote {
     // Update is called once per frame
     void Update()
     {
+        if (numberNotes > 0)
+        {
+            MissNote(notes, numberNotes);
+        }
+
         if (Input.GetKeyDown("down"))
         {
-            if (numberNotes > 0)
-            {
-                ProcessNoteScore(notes);
-                Destroy(notes[0].gameObject);
-                Decaler(notes);
-                numberNotes--;
-            }
-            else
-            {
-                game.score -= variationScore;
-            }
+            ProcessNoteScore(notes, numberNotes);
         }
     }
 }

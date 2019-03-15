@@ -27,20 +27,44 @@ public class BoxNote : MonoBehaviour {
         }
     }
 
-    protected void ProcessNoteScore(Note[] notes)
+    protected void ProcessNoteScore(Note[] notes, int numberNotes)
     {
         float distanceTmp = Mathf.Abs(notes[0].gameObject.transform.position.y - this.transform.position.y);
-        if (distanceTmp < distanceGood)
+        if (numberNotes > 0)
         {
-            game.score += variationScore * 3;
-        }
-        else if (distanceTmp < distanceBad)
-        {
-            game.score += variationScore;
+            if (distanceTmp < distanceGood)
+            {
+                game.score += variationScore * 3;
+            }
+            else if (distanceTmp < distanceBad)
+            {
+                game.score += variationScore;
+            }
+            else
+            {
+                game.score -= variationScore;
+            }
+            Destroy(notes[0].gameObject);
+            Decaler(notes);
+            numberNotes--;
         }
         else
         {
             game.score -= variationScore;
         }
+        
+    }
+
+    protected void MissNote(Note[] notes, int numberNotes)
+    {
+        float distanceTmp = notes[0].gameObject.transform.position.y - this.transform.position.y;
+        if (distanceTmp < -distanceBad)
+        {
+            game.score -= variationScore * 2;
+            Destroy(notes[0].gameObject);
+            Decaler(notes);
+            numberNotes--;
+        }
+
     }
 }
