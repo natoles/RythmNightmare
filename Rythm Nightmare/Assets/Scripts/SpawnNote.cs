@@ -11,8 +11,10 @@ public class SpawnNote : MonoBehaviour {
     public GameObject UpNote;
     public GameObject RightNote;
 
-    private float[] noteX = new float[4] { -7.5f, -2.5f, 2.5f, 7.5f };
-    private float noteY = 6f;
+    public int difficulty = 1;
+
+    private float[] noteX = new float[4] { -6f, -2f, 2f, 6f };
+    private float noteY = 6.5f;
 
     private int compteur = 0;
 
@@ -23,7 +25,7 @@ public class SpawnNote : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (compteur++ % 60 == 0)
+		if (compteur++ % (60/difficulty) == 0)
         {
             int randNote = Random.Range(0, 4);
             switch(randNote)
