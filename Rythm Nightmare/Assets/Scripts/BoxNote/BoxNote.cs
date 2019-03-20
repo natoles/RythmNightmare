@@ -8,6 +8,7 @@ public class BoxNote : MonoBehaviour {
     protected float distanceBad = 1.2f;
     protected int variationScore = 1;
     protected GameScript game;
+    public int numberNotes = 0;
 
     // Use this for initialization
     void Start () {
@@ -19,19 +20,20 @@ public class BoxNote : MonoBehaviour {
 		
 	}
     
-    protected void Decaler(Note[] arr)
+    protected void Decaler(Note[] arr, int numberNotes)
     {
-        for (int i = 0; i < arr.Length - 1; i++)
+        for (int i = 0; i < numberNotes ; i++)
         {
             arr[i] = arr[i + 1];
         }
     }
 
-    protected void ProcessNoteScore(Note[] notes, int numberNotes)
+    protected void ProcessNoteScore(Note[] notes)
     {
-        float distanceTmp = Mathf.Abs(notes[0].gameObject.transform.position.y - this.transform.position.y);
         if (numberNotes > 0)
         {
+            numberNotes--;
+            float distanceTmp = Mathf.Abs(notes[0].gameObject.transform.position.y - this.transform.position.y);
             if (distanceTmp < distanceGood)
             {
                 game.score += variationScore * 3;
@@ -44,9 +46,9 @@ public class BoxNote : MonoBehaviour {
             {
                 game.score -= variationScore;
             }
+            
             Destroy(notes[0].gameObject);
-            Decaler(notes);
-            numberNotes--;
+            Decaler(notes, numberNotes+1);
         }
         else
         {
@@ -55,16 +57,18 @@ public class BoxNote : MonoBehaviour {
         
     }
 
-    protected void MissNote(Note[] notes, int numberNotes)
+    virtual protected void MissNote(Note[] notes, float boxPos)
     {
-        float distanceTmp = notes[0].gameObject.transform.position.y - this.transform.position.y;
-        if (distanceTmp < -distanceBad)
+        if (numberNotes > 0)
         {
-            game.score -= variationScore * 2;
-            Destroy(notes[0].gameObject);
-            Decaler(notes);
-            numberNotes--;
+            float distanceTmp = notes[0].gameObject.transform.position.y - this.transform.position.y;
+            if (distanceTmp < -distanceBad)
+            {
+                game.score -= variationScore * 2;
+                Destroy(notes[0].gameObject);
+                Decaler(notes,numberNotes);
+                numberNotes--;
+            }
         }
-
     }
 }

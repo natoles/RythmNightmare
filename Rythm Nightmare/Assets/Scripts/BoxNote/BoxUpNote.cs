@@ -5,7 +5,6 @@ using UnityEngine;
 public class BoxUpNote : BoxNote {
 
     public Note[] notes = new Note[10];
-    public int numberNotes = 0;
 
     // Use this for initialization
     void Start()
@@ -16,14 +15,11 @@ public class BoxUpNote : BoxNote {
     // Update is called once per frame
     void Update()
     {
-        if (numberNotes > 0)
-        {
-            MissNote(notes, numberNotes);
-        }
+        MissNote(notes, this.transform.position.y);
 
         if (Input.GetKeyDown("up"))
         {
-            ProcessNoteScore(notes, numberNotes);
+            ProcessNoteScore(notes);
         }
     }
 }
