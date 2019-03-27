@@ -9,7 +9,7 @@ public class Arduino2 : MonoBehaviour
 {
 
     SerialPort stream = new SerialPort("\\\\.\\COM13", 9600);
-    int distance = 0;
+    public int distance = 0;
 
     void Start()
     {
