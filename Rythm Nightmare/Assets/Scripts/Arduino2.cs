@@ -19,7 +19,7 @@ public class Arduino2 : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(distance);
+        //Debug.Log(distance);
     }
     
     private void OnGUI()

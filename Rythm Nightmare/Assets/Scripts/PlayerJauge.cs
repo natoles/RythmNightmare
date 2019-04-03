@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerJauge : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class PlayerJauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = ard.distance%16;
+        distance = Math.Min(ard.distance, 32);
+        distance = distance / 2;
         transform.position = new Vector3(transform.position.x, -3.15f + distance * 0.4f, 0);
         if (Input.GetKeyDown(KeyCode.UpArrow))
             distance += 1;
