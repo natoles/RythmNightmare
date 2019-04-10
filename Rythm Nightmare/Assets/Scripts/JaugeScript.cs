@@ -9,6 +9,7 @@ public class JaugeScript : MonoBehaviour {
     private int MIN_SLEEP = 60;
     private int MAX_SLEEP = 180;
 
+    public GameScript game;
     public GameObject player;
     public Rigidbody2D rb;
     private float edgeY = 3.15f;
@@ -39,6 +40,7 @@ public class JaugeScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        game.score += Mathf.Max(0, 2 - Mathf.Abs( (int) Mathf.Round((2*(transform.position.y - player.transform.position.y)))));
         if (sleeping && sleep < lengthSleep)
         {
             sleep++;
