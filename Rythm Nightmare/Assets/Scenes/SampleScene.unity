@@ -375,7 +375,7 @@ MonoBehaviour:
   DownNote: {fileID: 1074569044493272, guid: 08bea9b355e099e488666f95c23f7151, type: 3}
   UpNote: {fileID: 1037184265895662, guid: 5809621db4cea434cbe02612a64c3aa6, type: 3}
   RightNote: {fileID: 1005406435341054, guid: c8d97812d41c9c14da1db61511176ca9, type: 3}
-  difficulty: 3
+  difficulty: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
