@@ -21,12 +21,12 @@ public class Arduino2 : MonoBehaviour
     {
         //Debug.Log(distance);
     }
-    
+    /*
     private void OnGUI()
     {
         string newString = "Connected: " + distance;
         GUI.Label(new Rect(10, 10, 300, 100), newString);
-    }
+    }*/
 
     public void ReadDistance()
     {

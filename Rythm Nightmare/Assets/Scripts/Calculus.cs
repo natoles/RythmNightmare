@@ -14,9 +14,11 @@ public class Calculus : MonoBehaviour
     int operand;
     System.Random rand;
     bool init;
+    int tmp;
     bool isActive;
     int timeInterval;
     private IEnumerator coroutine;
+    string display;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,12 @@ public class Calculus : MonoBehaviour
             }
             else
             {
+                if (leftNumber < rightNumber)
+                {
+                    tmp = leftNumber;
+                    leftNumber = rightNumber;
+                    rightNumber = tmp;
+                }
                 solution = leftNumber - rightNumber;
             }
         }
@@ -78,5 +86,21 @@ public class Calculus : MonoBehaviour
         init = true;
     }
 
+    private void OnGUI()
+    {
+        if (isActive)
+        {
+            if (operand == 0)
+            {
+                display = leftNumber + " + " + rightNumber;
+            }
+            else
+            {
+                display = leftNumber + " - " + rightNumber;
+            }
+        }
+        
+        GUI.Label(new Rect(10, 100, 3000, 1000), display);
+    }
 
 }
