@@ -7,9 +7,10 @@ public class ScreamScript : MonoBehaviour
     public GameObject screamer;
     public Arduino2 ard;
 
-    public int VISIBLE_TIME = 120;
+    public int VISIBLE_TIME = 200;
     public int DB_NEEDED = 70;
-        
+    System.Random rand;
+
     private int screamed_db = 0;
     private int count_till;
     private int random_count = 0;
@@ -18,6 +19,7 @@ public class ScreamScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        rand = new System.Random();
         count_till = Random.Range(180, 600);
     }
 
@@ -47,6 +49,7 @@ public class ScreamScript : MonoBehaviour
         {
             if (++random_count == count_till)
             {
+                screamer.transform.Rotate(1, 1, rand.Next(0,360)); 
                 screamer.SetActive(true);
             }
         }

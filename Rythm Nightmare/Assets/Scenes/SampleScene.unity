@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d226644167c38084b9526e34a6149f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game: {fileID: 1455989202}
   player: {fileID: 1388653908}
   rb: {fileID: 301779489}
 --- !u!212 &301779491
@@ -794,6 +795,8 @@ GameObject:
   - component: {fileID: 1455989202}
   - component: {fileID: 1455989203}
   - component: {fileID: 1455989204}
+  - component: {fileID: 1455989205}
+  - component: {fileID: 1455989206}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -865,6 +868,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
+--- !u!114 &1455989205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455989199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d617581aaeacc449d89d3298f8ffd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1455989206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455989199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1c69a5398a32947bdaf506875a1fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screamer: {fileID: 0}
+  ard: {fileID: 1455989204}
+  VISIBLE_TIME: 120
+  DB_NEEDED: 70
 --- !u!1 &1523131526
 GameObject:
   m_ObjectHideFlags: 0

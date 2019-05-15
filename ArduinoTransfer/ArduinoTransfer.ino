@@ -4,19 +4,24 @@
 SR04 sr04 = SR04(ECHO_PIN,TRIG_PIN);
 long a;
 
-int  sensorPin  =  A0;     // select the input  pin for  the potentiometer 
+int  sensorPinD  =  7;     // select the input  pin for  the potentiometer
+int  sensorPinA  =  A0; 
 int  sensorValue =  0;  // variable to  store  the value  coming  from  the sensor
 int db;
 
 void setup() {
    Serial.begin(9600);
    delay(1000);
+   pinMode(sensorPinD, INPUT);
 }
 
 void loop() {
    a=sr04.Distance();
-   sensorValue =  analogRead(sensorPin);
-   //Serial.write(a);
+   sensorValue =  analogRead(sensorPinA);
+   if (digitalRead(sensorPinD) == HIGH){
+    Serial.println("Bonjour");
+   }
+   Serial.write(a);
    Serial.flush();
    //Serial.println(a); 
    Serial.println(sensorValue,  DEC);
@@ -24,8 +29,3 @@ void loop() {
    delay(100);
 }
 
-
-}
-void loop(){
-
-}
