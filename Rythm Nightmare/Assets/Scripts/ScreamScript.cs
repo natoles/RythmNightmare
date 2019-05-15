@@ -34,7 +34,7 @@ public class ScreamScript : MonoBehaviour
                 screamer.SetActive(false);
                 visible_count = 0;
                 random_count = 0;
-                count_till = Random.Range(180, 600);
+                count_till = Random.Range(600, 900);
             }
             else
             {

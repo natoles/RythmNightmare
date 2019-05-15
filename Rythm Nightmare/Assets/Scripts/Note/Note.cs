@@ -6,7 +6,7 @@ public class Note : MonoBehaviour {
 
     protected Vector2 velocity;
     protected Rigidbody2D rb;
-    public float speed = 5f;
+    public float speed = 100f;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +20,6 @@ public class Note : MonoBehaviour {
 
     protected void SetSpeed()
     {
-        velocity = new Vector2(0, -1 * speed);
+        velocity = new Vector2(0, -1 * 15);
     }
 }

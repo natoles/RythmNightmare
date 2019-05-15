@@ -104,9 +104,12 @@ public class Calculus : MonoBehaviour
             else
             {
                 display = leftNumber + " - " + rightNumber;
-            }
+            } 
+        } else
+        {
+            display = "  ";
         }
-        
+
         GUI.Label(new Rect(xpos, ypos, 300, 100), display, guiStyle);
     }
 

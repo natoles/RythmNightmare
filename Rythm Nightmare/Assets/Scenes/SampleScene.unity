@@ -376,7 +376,7 @@ MonoBehaviour:
   DownNote: {fileID: 1074569044493272, guid: 08bea9b355e099e488666f95c23f7151, type: 3}
   UpNote: {fileID: 1037184265895662, guid: 5809621db4cea434cbe02612a64c3aa6, type: 3}
   RightNote: {fileID: 1005406435341054, guid: c8d97812d41c9c14da1db61511176ca9, type: 3}
-  difficulty: 2
+  difficulty: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screamer: {fileID: 1535031142}
   ard: {fileID: 1455989204}
-  VISIBLE_TIME: 120
+  VISIBLE_TIME: 200
   DB_NEEDED: 70
 --- !u!1 &1523131526
 GameObject:
@@ -1106,7 +1106,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e871fbf3228f81d4cb6bf9ac46cd13a8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
