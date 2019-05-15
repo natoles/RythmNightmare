@@ -19,12 +19,17 @@ public class Calculus : MonoBehaviour
     int timeInterval;
     private IEnumerator coroutine;
     string display;
+    int xpos = 10;
+    int ypos = 10;
+    private GUIStyle guiStyle = new GUIStyle(); //create a new variable
     // Start is called before the first frame update
     void Start()
     {
         rand = new System.Random();
         isActive = false;
         init = true;
+        guiStyle.fontSize = 80; //change the font size
+        guiStyle.normal.textColor = Color.red;
     }
 
     // Update is called once per frame
@@ -36,6 +41,8 @@ public class Calculus : MonoBehaviour
         if (init)
         {
             coroutine = Wait();
+            xpos = rand.Next(10, 1000);
+            ypos = rand.Next(10, 1000);
             oldNumberEntered = numberEntered;
             init = false;
             isActive = true;
@@ -100,7 +107,7 @@ public class Calculus : MonoBehaviour
             }
         }
         
-        GUI.Label(new Rect(10, 100, 3000, 1000), display);
+        GUI.Label(new Rect(xpos, ypos, 300, 100), display, guiStyle);
     }
 
 }
