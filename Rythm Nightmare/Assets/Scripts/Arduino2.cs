@@ -8,7 +8,7 @@ using DigitalRuby.Threading;
 public class Arduino2 : MonoBehaviour
 {
 
-    SerialPort stream = new SerialPort("\\\\.\\COM13", 9600);
+    SerialPort stream = new SerialPort("\\\\.\\COM3", 9600);
     public int distance = 0;
 
     void Start()
