@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScreamScript : MonoBehaviour
 {
     public GameObject screamer;
+    public Arduino2 ard;
 
     public int VISIBLE_TIME = 120;
     public int DB_NEEDED = 70;
@@ -23,6 +24,7 @@ public class ScreamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        screamed_db = ard.distance;
         if (screamer.activeSelf)
         {
             if (++visible_count == VISIBLE_TIME)
@@ -34,7 +36,7 @@ public class ScreamScript : MonoBehaviour
             }
             else
             {
-                if ((screamed_db = 80) >= DB_NEEDED)
+                if (screamed_db >= DB_NEEDED)
                 {
                     this.GetComponent<GameScript>().score++;
                 }
