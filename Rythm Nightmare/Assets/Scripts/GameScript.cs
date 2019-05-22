@@ -13,6 +13,12 @@ public class GameScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log(score);
+        Debug.Log(score);
+    }
+
+	private void OnGUI()
+    {
+        string newString = "Score : " + score;
+        GUI.Label(new Rect(10, 10, 300, 100), newString);
     }
 }

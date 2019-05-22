@@ -40,7 +40,7 @@ public class JaugeScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        game.score += Mathf.Max(0, 2 - Mathf.Abs( (int) Mathf.Round((2*(transform.position.y - player.transform.position.y)))));
+        //game.score += Mathf.Max(0, 2 - Mathf.Abs( (int) Mathf.Round((2*(transform.position.y - player.transform.position.y)))));
         if (sleeping && sleep < lengthSleep)
         {
             sleep++;

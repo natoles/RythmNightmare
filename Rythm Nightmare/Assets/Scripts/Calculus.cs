@@ -41,8 +41,8 @@ public class Calculus : MonoBehaviour
         if (init)
         {
             coroutine = Wait();
-            xpos = rand.Next(10, 1000);
-            ypos = rand.Next(10, 1000);
+            xpos = rand.Next(10, 500);
+            ypos = rand.Next(10, 300);
             oldNumberEntered = numberEntered;
             init = false;
             isActive = true;
